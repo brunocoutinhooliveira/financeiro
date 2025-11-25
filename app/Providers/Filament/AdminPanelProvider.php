@@ -3,9 +3,9 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Resources\Users\UserResource;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use App\Models\City;
 use Filament\Http\Middleware\Authenticate;
-use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -34,7 +34,6 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->authGuard('web')
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -64,8 +63,7 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->plugins([
-		    FilamentShieldPlugin::make(),
-		    	->generate()
+                FilamentShieldPlugin::make(),
             ])
             ->authMiddleware([
                 Authenticate::class,
