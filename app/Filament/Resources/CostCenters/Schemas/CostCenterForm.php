@@ -12,7 +12,8 @@ class CostCenterForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+			->required()
+			->unique(),
             ]);
     }
 }

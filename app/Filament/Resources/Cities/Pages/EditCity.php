@@ -9,13 +9,15 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditCity extends EditRecord
 {
-    protected static string $resource = CityResource::class;
+	protected static string $resource = CityResource::class;
+
+	protected static ?string $title = 'Editar Cidade';
 
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            ViewAction::make()->label('Visualizar'),
+            DeleteAction::make()->label('Deletar'),
         ];
     }
 }

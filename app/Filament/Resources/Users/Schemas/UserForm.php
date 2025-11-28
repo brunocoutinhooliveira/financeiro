@@ -23,7 +23,8 @@ class UserForm
                     ->required(),
                 TextInput::make('email')
                     ->label('Email address')
-                    ->email()
+		    ->email()
+	    	    ->unique()
                     ->required(),
                 TextInput::make('password')
                     ->label('Senha')

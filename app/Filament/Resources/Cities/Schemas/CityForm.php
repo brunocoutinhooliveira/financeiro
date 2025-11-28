@@ -11,8 +11,10 @@ class CityForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
+		    TextInput::make('name')
+		    	->label('Nome')
+			->required()
+			->unique(),
             ]);
     }
 }

@@ -5,9 +5,11 @@ namespace App\Filament\Resources\Users\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Notifications\Notification;
 
 class UsersTable
 {
@@ -41,7 +43,8 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+		    EditAction::make(),
+		    DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -49,4 +52,6 @@ class UsersTable
                 ]),
             ]);
     }
+
+
 }
