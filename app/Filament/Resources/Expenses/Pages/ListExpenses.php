@@ -10,10 +10,12 @@ class ListExpenses extends ListRecords
 {
     protected static string $resource = ExpenseResource::class;
 
+    protected static ?string $title = 'Despesas';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()->label('Criar'),
         ];
     }
 }

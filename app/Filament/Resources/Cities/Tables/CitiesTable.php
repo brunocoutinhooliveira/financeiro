@@ -16,18 +16,18 @@ class CitiesTable
         return $table
             ->columns([
 		    TextColumn::make('name')
-		    ->label('Nome')
-                    ->searchable(),
-	    TextColumn::make('created_at')
+		        ->label('Nome')
+                ->searchable(),
+	        TextColumn::make('created_at')
 	    	    ->label('Criado em')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-	    TextColumn::make('updated_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+	        TextColumn::make('updated_at')
 	    	    ->label('Atualizado em')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -38,7 +38,7 @@ class CitiesTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make()->label('Deletar Todos'),
+                    DeleteBulkAction::make()->label('Desvincular Selecionados'),
                 ]),
             ]);
     }

@@ -10,10 +10,12 @@ class ViewRevenue extends ViewRecord
 {
     protected static string $resource = RevenueResource::class;
 
+    protected static ?string $title = 'Visualizar';
+
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            EditAction::make()->label('Visualizar'),
         ];
     }
 }

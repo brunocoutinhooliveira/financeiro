@@ -25,16 +25,20 @@ class UsersTable
                     ->label('Email address')
                     ->searchable(),
                 TextColumn::make('roles.name')
+                    ->label('Função')
                     ->badge()
                     ->searchable(),
                 TextColumn::make('email_verified_at')
+                    ->label('Verificado em')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('created_at')
+                    ->label('Criado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Atualizado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true)
@@ -43,12 +47,22 @@ class UsersTable
                 //
             ])
             ->recordActions([
-		    EditAction::make(),
-		    DeleteAction::make()
+		        EditAction::make()->label('Editar'),
+		        DeleteAction::make()->label('Excluir')->after(function () {
+                    Notification::make()
+                        ->title('Usuário excluído com sucesso.')
+                        ->success()
+                        ->send();
+                }),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->label('Excluir selecionados')->after(function () {
+                        Notification::make()
+                            ->title('Usuários excluídos com sucesso.')
+                            ->success()
+                            ->send();
+                    }),
                 ]),
             ]);
     }

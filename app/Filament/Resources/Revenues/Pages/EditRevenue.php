@@ -11,11 +11,13 @@ class EditRevenue extends EditRecord
 {
     protected static string $resource = RevenueResource::class;
 
+    protected static ?string $title = 'Editar Receita';
+
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            ViewAction::make()->label('Visualizar'),
+            DeleteAction::make()->label('Deletar'),
         ];
     }
     

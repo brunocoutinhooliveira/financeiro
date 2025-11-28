@@ -12,6 +12,7 @@ class DescriptionForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nome')
 			->required()
 			->unique(),
             ]);

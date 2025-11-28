@@ -20,11 +20,12 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nome')
                     ->required(),
                 TextInput::make('email')
                     ->label('Email address')
-		    ->email()
-	    	    ->unique()
+		            ->email()
+	    	        ->unique()
                     ->required(),
                 TextInput::make('password')
                     ->label('Senha')
@@ -35,6 +36,7 @@ class UserForm
                     ->minLength(8)
                     ->revealable(),
                 Select::make('roles')
+                    ->label('Função')
                     ->multiple()
                     ->relationship('roles', 'name')
                     ->searchable()

@@ -11,11 +11,13 @@ class EditExpense extends EditRecord
 {
     protected static string $resource = ExpenseResource::class;
 
+    protected static ?string $title = 'Editar Despesa';
+
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            ViewAction::make()->label('Visualizar'),
+            DeleteAction::make()->label('Deletar'),
         ];
     }
     

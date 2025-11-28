@@ -11,6 +11,8 @@ class EditCostCenter extends EditRecord
 {
     protected static string $resource = CostCenterResource::class;
 
+    protected static ?string $title = 'Editar Centro de Custo';
+
     protected function getHeaderActions(): array
     {
         return [

@@ -15,30 +15,33 @@ class RevenueForm
         return $schema
             ->components([
                 DatePicker::make('date')
+                    ->label('Data')
                     ->required(),
                 Select::make('city_id')
-                    ->label('City')
                     ->relationship('city', 'name')
+                    ->label('Nome')
                     ->searchable()
                     ->preload()
                     ->required(),
                 Select::make('cost_center_id')
-                    ->label('Cost Center')
+                    ->label('Centro de Custo')
                     ->relationship('costCenter', 'name')
                     ->searchable()
                     ->preload()
                     ->required(),
                 Select::make('description_id')
-                    ->label('Description')
+                    ->label('Descrição')
                     ->relationship('description', 'name')
                     ->searchable()
                     ->preload()
                     ->required(),
                 TextInput::make('value')
+                    ->label('Valor')
                     ->required()
                     ->numeric(),
                 TextInput::make('nf'),
                 Textarea::make('observation')
+                    ->label('Observação')
                     ->columnSpanFull(),
             ]);
     }

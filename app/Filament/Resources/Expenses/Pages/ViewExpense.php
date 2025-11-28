@@ -10,10 +10,12 @@ class ViewExpense extends ViewRecord
 {
     protected static string $resource = ExpenseResource::class;
 
+    protected static ?string $title = 'Visualizar';
+
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            EditAction::make()->label('Visualizar'),
         ];
     }
 }

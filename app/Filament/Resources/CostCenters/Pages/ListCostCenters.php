@@ -10,10 +10,12 @@ class ListCostCenters extends ListRecords
 {
     protected static string $resource = CostCenterResource::class;
 
+    protected static ?string $title = 'Centros de Custo';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()->label('Criar'),
         ];
     }
 }

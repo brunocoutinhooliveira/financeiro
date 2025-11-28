@@ -10,10 +10,12 @@ class ListRevenues extends ListRecords
 {
     protected static string $resource = RevenueResource::class;
 
+    protected static ?string $title = 'Receitas';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()->label('Criar'),
         ];
     }
 }

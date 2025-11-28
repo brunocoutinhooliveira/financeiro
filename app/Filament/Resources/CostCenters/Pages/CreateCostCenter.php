@@ -8,4 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateCostCenter extends CreateRecord
 {
     protected static string $resource = CostCenterResource::class;
+
+    protected static ?string $title = 'Criar Centro de Custo';
 }

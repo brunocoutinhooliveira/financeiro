@@ -10,10 +10,12 @@ class ListDescriptions extends ListRecords
 {
     protected static string $resource = DescriptionResource::class;
 
+    protected static ?string $title = 'Descrições';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()->label('Criar'),
         ];
     }
 }

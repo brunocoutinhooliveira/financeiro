@@ -10,10 +10,12 @@ class ViewCostCenter extends ViewRecord
 {
     protected static string $resource = CostCenterResource::class;
 
+    protected static ?string $title = 'Visualizar';
+
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            EditAction::make()->label('Visualizar'),
         ];
     }
 }

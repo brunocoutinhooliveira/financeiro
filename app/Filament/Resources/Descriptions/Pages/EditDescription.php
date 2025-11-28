@@ -11,11 +11,13 @@ class EditDescription extends EditRecord
 {
     protected static string $resource = DescriptionResource::class;
 
+    protected static ?string $title = 'Editar Descrição';
+
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            ViewAction::make()->label('Visualizar'),
+            DeleteAction::make()->label('Deletar'),
         ];
     }
 }

@@ -9,6 +9,8 @@ class CreateRevenue extends CreateRecord
 {
     protected static string $resource = RevenueResource::class;
 
+    protected static ?string $title = 'Criar Receita';
+
     public function mutateFormDataBeforeCreate(array $data): array
     {
         $data['user_id'] = auth()->id();

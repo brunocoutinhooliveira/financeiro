@@ -12,10 +12,6 @@ class ListCities extends ListRecords
 
 	protected static ?string $title = 'Cidades';
 
-	protected static ?string $label = 'Cidade';
-
-	protected static ?string $pluralLabel = 'Cidades';
-
     protected function getHeaderActions(): array
     {
         return [
