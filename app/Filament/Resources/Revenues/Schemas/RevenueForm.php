@@ -19,7 +19,7 @@ class RevenueForm
                     ->required(),
                 Select::make('city_id')
                     ->relationship('city', 'name')
-                    ->label('Nome')
+                    ->label('Cidade')
                     ->searchable()
                     ->preload()
                     ->required(),

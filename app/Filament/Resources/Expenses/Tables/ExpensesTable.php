@@ -23,27 +23,30 @@ class ExpensesTable
                 TextColumn::make('date')
                     ->date()
                     ->sortable(),
-                TextColumn::make('city.name')->label('City')
-                    ->numeric()
+                TextColumn::make('city.name')
+                    ->label('City')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('costCenter.name')->label('Cost Center')
-                    ->numeric()
+                TextColumn::make('costCenter.name')
+                    ->label('Cost Center')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('description.name')->label('Description')
-                    ->numeric()
+                TextColumn::make('description.name')
+                    ->label('Description')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('value')
+                    ->label('Valor')
                     ->numeric()
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')
+                    ->label('Criado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Atualizado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -153,12 +156,12 @@ class ExpensesTable
                     }),
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()->label('Visualizar'),
+                EditAction::make()->label('Editar'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->label('Desvincular Selecionados'),
                 ]),
             ]);
     }
